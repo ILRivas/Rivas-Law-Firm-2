@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { CheckCircle, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 
 const highlights = [
   "Personalized attention to every case",
@@ -16,22 +17,15 @@ export function AboutPreview() {
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
           {/* Image/Visual */}
           <div className="relative">
-            <div className="aspect-[4/3] overflow-hidden rounded-2xl bg-primary/10">
-              <div className="flex h-full w-full items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="mx-auto mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-primary">
-                    <span className="font-serif text-4xl font-bold text-primary-foreground">
-                      25+
-                    </span>
-                  </div>
-                  <p className="font-serif text-2xl font-semibold text-foreground">
-                    Years of Legal Excellence
-                  </p>
-                  <p className="mt-2 text-muted-foreground">
-                    Serving Pharr, Texas and the Rio Grande Valley
-                  </p>
-                </div>
-              </div>
+            <div className="aspect-4/3 overflow-hidden rounded-2xl bg-primary/10">
+              <Image
+                src="/images/Attorney-Headshot.webp"
+                alt="Professional law office"
+                fill
+                className="object-cover object-top rounded-2xl"
+                priority
+                quality={85}
+                />
             </div>
             {/* Decorative Element */}
             <div className="absolute -bottom-4 -right-4 -z-10 h-full w-full rounded-2xl border-2 border-accent" />
@@ -49,11 +43,10 @@ export function AboutPreview() {
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
               <span className="text-pretty">
-                Founded on the principles of integrity, dedication, and
-                excellence, our law firm has been a cornerstone of the Pharr
-                legal community for over two decades. We understand that facing
-                legal challenges can be overwhelming, which is why we approach
-                every case with compassion and determination.
+                Founded by Israel Lee Rivas, the Rivas Law Firm, PLLC. is built
+                on a strong foundation of passion, commitment, and unparalleled legal expertise. Since its inception,
+                our firm has been dedicated to securing justice for our clients, and assisting
+                in recovering millions of dollars in settlements.
               </span>
             </p>
 

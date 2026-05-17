@@ -14,11 +14,12 @@ export default function HomePage() {
         {/* Hero Section */}
         <HeroSection />
         
+        {/* About Preview */}
+        <AboutPreview />
         {/* Practice Areas Preview */}
         <PracticeAreasPreview />
         
-        {/* About Preview */}
-        <AboutPreview />
+        
         
         {/* Final CTA */}
         <CTASection variant="dark" />

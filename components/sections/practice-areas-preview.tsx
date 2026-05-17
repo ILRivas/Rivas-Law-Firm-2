@@ -30,7 +30,7 @@ const practiceAreas = [
     icon: Home,
     title: "Property Law",
     description:
-      "Expert counsel for real estate transactions and property disputes.",
+      "Reliable guidance for real estate matters, contracts, and property disputes.",
   },
 ]
 

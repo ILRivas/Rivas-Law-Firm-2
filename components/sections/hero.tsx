@@ -3,7 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Phone, Award, Users, Clock } from "lucide-react"
+import { ArrowRight, Phone, Award, Users, Clock, DollarSign } from "lucide-react"
 import { useCountUp } from "@/hooks/use-count-up"
 
 function CountUpStat({ 
@@ -11,15 +11,19 @@ function CountUpStat({
   endValue, 
   suffix = "", 
   prefix = "",
-  label 
+  label,
+  finalDisplay
 }: { 
   icon: React.ComponentType<{ className?: string }>
   endValue: number
   suffix?: string
   prefix?: string
-  label: string 
+  label: string
+  finalDisplay?: string
 }) {
   const { count, elementRef } = useCountUp({ end: endValue, duration: 2500 })
+
+  const isComplete = count === endValue
 
   return (
     <div
@@ -31,7 +35,10 @@ function CountUpStat({
       </div>
       <div>
         <p className="text-2xl font-bold text-foreground">
-          {prefix}{count.toLocaleString()}{suffix}
+          {isComplete && finalDisplay 
+            ? finalDisplay 
+            : `${prefix}${count.toLocaleString()}${suffix}`
+          }
         </p>
         <p className="text-sm text-muted-foreground">
           {label}
@@ -42,9 +49,26 @@ function CountUpStat({
 }
 
 const stats = [
-  { icon: Award, endValue: 25, suffix: "+", label: "Years Experience" },
-  { icon: Users, endValue: 1000, suffix: "+", label: "Cases Won" },
-  { icon: Clock, endValue: 24, suffix: "/7", label: "Available" },
+  { 
+    icon: Award, 
+    endValue: 100, 
+    suffix: "%", 
+    label: "Client Focused" 
+  },
+  { 
+    icon: DollarSign, 
+    prefix: "$", 
+    endValue: 5000000, 
+    finalDisplay: "$ Millions",
+    label: "Recovered for Clients"
+    
+  },
+  { 
+    icon: Clock,
+    endValue: 24, 
+    suffix: "/7", 
+    label: "Availability"
+  },
 ]
 
 export function HeroSection() {
@@ -56,7 +80,7 @@ export function HeroSection() {
           src="/images/flipped-truck.webp"
           alt="Professional law office"
           fill
-          className="object-"
+          className="object-cover"
           priority
           quality={85}
         />
@@ -70,12 +94,12 @@ export function HeroSection() {
             {/* Content */}
             <div className="text-center lg:text-left">
               <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-accent">
-                Trusted Legal Representation in Pharr, Texas
+                Trusted Legal Representation in the Rio Grande Valley
               </p>
               <h1 className="font-serif text-4xl font-bold leading-tight text-primary-foreground sm:text-5xl lg:text-6xl">
                 <span className="text-balance">
-                  Fighting for Justice,{" "}
-                  <span className="text-accent">Protecting Your Rights</span>
+                  Rivas Law Firm, PLLC.{" "}<br/>
+                  <span className="text-accent">Wrangling Every Legal Challenge You Face</span>
                 </span>
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-primary-foreground/80 sm:text-xl">
@@ -104,7 +128,7 @@ export function HeroSection() {
                   variant="outline"
                   className="gap-2 border-primary-foreground/30 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
                 >
-                  <a href="tel:+19565551234">
+                  <a href="tel:+19563318777">
                     <Phone className="h-4 w-4" />
                     Call Now
                   </a>
@@ -115,7 +139,7 @@ export function HeroSection() {
             {/* Stats Card */}
             <div className="mx-auto w-full max-w-md lg:mx-0 lg:ml-auto">
               <div className="rounded-2xl bg-card p-8 shadow-2xl">
-                <h3 className="mb-6 text-center font-serif text-xl font-semibold text-foreground">
+                <h3 className="mb-6 text-center font-serif text-3xl font-semibold text-foreground">
                   Why Choose Us
                 </h3>
                 <div className="space-y-6">
@@ -125,7 +149,9 @@ export function HeroSection() {
                       icon={stat.icon}
                       endValue={stat.endValue}
                       suffix={stat.suffix}
+                      prefix={stat.prefix}
                       label={stat.label}
+                      finalDisplay={stat.finalDisplay}
                     />
                   ))}
                 </div>

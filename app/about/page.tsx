@@ -7,8 +7,8 @@ import { TeamSection } from "@/components/sections/team"
 import { PageHeader } from "@/components/page-header"
 
 export const metadata: Metadata = {
-  title: "About Us | Law Office - Pharr, Texas",
-  description: "Learn about our law firm's 25+ years of experience serving the Pharr, Texas community with dedicated legal representation.",
+  title: "About Us | Rivas Law Firm, PLLC. - Rio Grande Valley, Texas",
+  description: "Learn about our law firm's commitment to serving the Rio Grande Valley with integrity, dedication, and excellence. Meet our experienced team and discover how we can help you with your legal needs.",
 }
 
 export default function AboutPage() {
@@ -20,12 +20,12 @@ export default function AboutPage() {
         <PageHeader 
           title="About Our Firm"
           subtitle="Who We Are"
-          description="Founded on the principles of integrity, dedication, and excellence, our law firm has been a cornerstone of the Pharr legal community for over two decades."
+          description="Committed to helping clients navigate difficult legal matters with clarity, preparation, and client-focused representation."
         />
-        
+        <TeamSection showHeader={true} />
         <AboutSection showHeader={false} />
 
-        <TeamSection showHeader={true} />
+        
         
         <CTASection variant="dark" />
       </main>

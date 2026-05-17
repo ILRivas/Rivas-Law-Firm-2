@@ -7,18 +7,16 @@ import { Languages, Clock } from "lucide-react"
 
 // Featured Attorney Data
 const attorney = {
-  name: "John Smith",
+  name: "Israel Lee Rivas",
   title: "Founding Attorney",
-  initials: "JS",
-  image: "/images/team/attorney.jpg",
-  bio: `With over 25 years of dedicated legal practice in South Texas, John Smith has built a reputation as a fierce advocate for his clients. Born and raised in the Rio Grande Valley, he understands the unique challenges our community faces and is committed to providing accessible, compassionate legal representation.
-
-After witnessing the impact of workplace injuries on his own family, John was inspired to pursue law to help others navigate difficult times. His approach combines aggressive representation with genuine care for each client's wellbeing and peace of mind.
-
-John is fluent in both English and Spanish, allowing him to connect with and serve the diverse communities of the Rio Grande Valley. When he's not in the courtroom, he's actively involved in local community organizations and enjoys spending time with his family.`,
+  initials: "IR",
+  image: "/images/Attorney-Headshot.webp",
+  bio: `Israel lee Rivas is a dedicated attorney and the visionary founder of the Rivas Law firm, PLLC. With a relentless commitment to justice and an impressive track record of securing millions in settlements for his clients, he combines legal expertise with a compassionate approach to advocacy.
+  
+  His leadership and unwaivering determination have established the firm as a trusted partner for individuals seeking fair compensation and effective legal representation.`,
   education: [
-    { degree: "Juris Doctor", school: "South Texas College of Law", year: "1998" },
-    { degree: "B.A. Political Science", school: "UT Pan American", year: "1995" },
+    { degree: "Juris Doctor", school: "Ohio Northern University"},
+    { degree: "B.A. Political Science", school: "UT Pan American" },
   ],
   barAdmissions: [
     "State Bar of Texas",
@@ -31,45 +29,23 @@ John is fluent in both English and Spanish, allowing him to connect with and ser
 // Support Staff Data
 const staff = [
   {
-    name: "Maria Garcia",
+    name: "Zachary R.",
     role: "Senior Paralegal",
-    initials: "MG",
-    image: "/images/team/maria.jpg",
-    yearsWithFirm: "15 years",
-    bio: "Maria is the backbone of our litigation team. With 15 years of experience, she expertly manages complex case files, coordinates with medical providers, and ensures every detail is in order for trial preparation.",
-    specialties: ["Case Management", "Medical Records", "Trial Preparation"],
+    initials: "ZR",
+    image: "/images/Zack-Headshot.webp",
+    bio: "Zachary R. is a dedicated paralegal and pre-law student at UTRGV, whose commitment to client care is evident in every case he manages. He ensures that every client receives exceptional care and attention throughout their legal journey, addressing all concerns promptly and providing clear guidance.",
     languages: ["English", "Spanish"],
   },
   {
-    name: "Sarah Johnson",
-    role: "Paralegal",
+    name: "Samantha T.",
+    role: "Case Manager",
     initials: "SJ",
-    image: "/images/team/sarah.jpg",
-    yearsWithFirm: "8 years",
-    bio: "Sarah specializes in family law documentation and maintains close communication with clients throughout their cases. Her attention to detail and empathetic approach helps families navigate difficult transitions.",
-    specialties: ["Family Law", "Client Communication", "Document Drafting"],
-    languages: ["English"],
-  },
-  {
-    name: "Rosa Martinez",
-    role: "Office Manager & Receptionist",
-    initials: "RM",
-    image: "/images/team/rosa.jpg",
-    yearsWithFirm: "10 years",
-    bio: "Rosa is often the first voice you'll hear when you call our office. She manages scheduling, coordinates appointments, and ensures every client feels welcomed and valued from the moment they reach out.",
-    specialties: ["Client Relations", "Scheduling", "Office Administration"],
+    image: "/images/Sam-Headshot.webp",
+    bio: "Samantha T. is an accomplished case manager who coordinates and manages client cases . She is known for her exceptional organizational skills and her ability to streamline case progress, ensuring that every client receives the personalized support they deserve. ",
     languages: ["English", "Spanish"],
   },
-  {
-    name: "David Chen",
-    role: "Legal Assistant",
-    initials: "DC",
-    image: "/images/team/david.jpg",
-    yearsWithFirm: "5 years",
-    bio: "David supports our attorneys with thorough legal research and document preparation. His analytical skills and dedication help build strong foundations for every case we take on.",
-    specialties: ["Legal Research", "Document Preparation", "Case Analysis"],
-    languages: ["English", "Mandarin"],
-  },
+  
+
 ]
 
 interface TeamSectionProps {
@@ -137,7 +113,7 @@ export function TeamSection({ showHeader = true }: TeamSectionProps) {
                     <li key={edu.degree} className="text-sm text-muted-foreground">
                       <span className="font-medium text-foreground">{edu.degree}</span>
                       <span className="mx-2">·</span>
-                      {edu.school}, {edu.year}
+                      {edu.school}
                     </li>
                   ))}
                 </ul>
@@ -189,13 +165,13 @@ export function TeamSection({ showHeader = true }: TeamSectionProps) {
                 <CardContent className="p-0">
                   <div className="flex flex-col sm:flex-row">
                     {/* Photo */}
-                    <div className="relative w-full sm:w-40 h-48 sm:h-auto shrink-0 bg-muted">
+                    <div className="relative w-full sm:w-44 h-64 sm:h-auto shrink-0 overflow-hidden bg-muted">
                       <Avatar className="h-full w-full rounded-none">
                         <Image
                           src={member.image}
                           alt={member.name}
                           fill
-                          className="object-cover"
+                          className="object-cover object-top transition-transform duration-300 hover:scale-105"
                           sizes="(max-width: 640px) 100vw, 160px"
                         />
                         <AvatarFallback className="h-full w-full rounded-none bg-primary/10 text-primary text-3xl font-serif">
@@ -213,26 +189,12 @@ export function TeamSection({ showHeader = true }: TeamSectionProps) {
                           </h3>
                           <p className="text-sm font-medium text-accent">{member.role}</p>
                         </div>
-                        <div className="flex items-center gap-1 text-xs text-muted-foreground bg-muted px-2 py-1 rounded-full">
-                          <Clock className="h-3 w-3" />
-                          {member.yearsWithFirm}
-                        </div>
+                        
                       </div>
                       
                       <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                         {member.bio}
                       </p>
-
-                      <div className="mt-4 flex flex-wrap gap-1">
-                        {member.specialties.map((specialty) => (
-                          <span 
-                            key={specialty} 
-                            className="bg-secondary text-secondary-foreground text-xs px-2 py-0.5 rounded-full"
-                          >
-                            {specialty}
-                          </span>
-                        ))}
-                      </div>
 
                       {member.languages.length > 0 && (
                         <div className="mt-3 flex items-center gap-1 text-xs text-muted-foreground">

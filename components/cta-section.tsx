@@ -60,9 +60,9 @@ export function CTASection({ variant = "default" }: CTASectionProps) {
                   : "border-primary/30 text-primary hover:bg-primary/5"
               }`}
             >
-              <a href="tel:+19565551234">
+              <a href="tel:+19563318777">
                 <Phone className="h-4 w-4" />
-                (956) 555-1234
+                (956) 331-8777
               </a>
             </Button>
           </div>
