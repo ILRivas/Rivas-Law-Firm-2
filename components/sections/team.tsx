@@ -10,7 +10,7 @@ const attorney = {
   name: "Israel Lee Rivas",
   title: "Founding Attorney",
   initials: "IR",
-  image: "/images/Attorney-Headshot.webp",
+  image: "/images/Rivas-Headshot2.webp",
   bio: `Israel lee Rivas is a dedicated attorney and the visionary founder of the Rivas Law firm, PLLC. With a relentless commitment to justice and an impressive track record of securing millions in settlements for his clients, he combines legal expertise with a compassionate approach to advocacy.
   
   His leadership and unwaivering determination have established the firm as a trusted partner for individuals seeking fair compensation and effective legal representation.`,
@@ -30,7 +30,7 @@ const attorney = {
 const staff = [
   {
     name: "Zachary R.",
-    role: "Senior Paralegal",
+    role: "Office Manager",
     initials: "ZR",
     image: "/images/Zack-Headshot.webp",
     bio: "Zachary R. is a dedicated paralegal and pre-law student at UTRGV, whose commitment to client care is evident in every case he manages. He ensures that every client receives exceptional care and attention throughout their legal journey, addressing all concerns promptly and providing clear guidance.",
@@ -38,14 +38,36 @@ const staff = [
   },
   {
     name: "Samantha T.",
-    role: "Case Manager",
-    initials: "SJ",
+    role: "Paralegal",
+    initials: "ST",
     image: "/images/Sam-Headshot.webp",
-    bio: "Samantha T. is an accomplished case manager who coordinates and manages client cases . She is known for her exceptional organizational skills and her ability to streamline case progress, ensuring that every client receives the personalized support they deserve. ",
+    bio: "Samantha T. is an accomplished paralegal who coordinates and manages client cases. She is known for her exceptional organizational skills and her ability to streamline case progress, ensuring that every client receives the personalized support they deserve. ",
+    languages: ["English"],
+  },
+  {
+    name: "Nelda G.",
+    role: "Paralegal",
+    initials: "NG",
+    image: "/images/Nelda-Headshot.webp",
+    bio: "Nelda G. is a skilled paralegal who provides essential support to the legal team. She is known for her meticulous attention to detail and her ability to assist in preparing legal documents, conducting research, and ensuring that all case files are organized and up-to-date.",
     languages: ["English", "Spanish"],
   },
-  
-
+  {
+    name: "Blanca A.",
+    role: "Paralegal",
+    initials: "BA",
+    image: "/images/Blanca-Headshot.webp",
+    bio: "Blanca A. is a dedicated paralegal who plays a crucial role in supporting the legal team. She is recognized for her strong research skills and her ability to assist in case preparation, ensuring that all necessary documentation is accurate and complete.",
+    languages: ["English", "Spanish"],
+  },
+  {
+    name: "Jennifer P.",
+    role: "Intake Specialist",
+    initials: "JP",
+    image: "/images/Jennifer-Headshot.webp",
+    bio: "Jennifer P. is a dedicated intake specialist who ensures that every client is properly assessed and directed to the appropriate legal resources. Her compassionate approach and attention to detail make her an invaluable asset to the team.",
+    languages: ["English", "Spanish"],
+  },
 ]
 
 interface TeamSectionProps {

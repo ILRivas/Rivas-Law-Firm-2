@@ -17,12 +17,12 @@ export function AboutPreview() {
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
           {/* Image/Visual */}
           <div className="relative">
-            <div className="aspect-4/3 overflow-hidden rounded-2xl bg-primary/10">
+            <div className="aspect-6/9 overflow-hidden rounded-2xl bg-primary/10">
               <Image
                 src="/images/Attorney-Headshot.webp"
                 alt="Professional law office"
                 fill
-                className="object-cover object-top rounded-2xl"
+                className="object-cover object-center rounded-3xl"
                 priority
                 quality={85}
                 />

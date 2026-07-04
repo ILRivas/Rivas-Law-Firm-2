@@ -26,7 +26,7 @@ export function AboutSection({
           <div className="relative">
             <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-border/50 shadow-sm">
               <Image
-                src="/images/Texas-Capitol.webp"
+                src="/images/LawFirm.webp"
                 alt="Rivas Law Firm"
                 fill
                 className="object-cover object-top"

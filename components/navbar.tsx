@@ -1,17 +1,35 @@
 "use client"
 
+
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Menu, Phone } from "lucide-react"
+import { Menu, Phone, Home, Briefcase, ChevronRight, Scale, User, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from "@/components/ui/sheet"
 
+
 const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/practice-areas", label: "Practice Areas" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
+  {
+    href: "/",
+    label: "Home",
+    icon: Home,
+  },
+  {
+    href: "/practice-areas",
+    label: "Practice Areas",
+    icon: Briefcase,
+  },
+  {
+    href: "/about",
+    label: "About",
+    icon: User,
+  },
+  {
+    href: "/contact",
+    label: "Contact",
+    icon: Mail,
+  },
 ]
 
 export function Navbar() {
@@ -57,7 +75,7 @@ export function Navbar() {
             />
             <div className="flex flex-col">
               <span
-                className={` font-serif text-lg font-semibold leading-none ${
+                className={` font-serif text-xl font-semibold leading-none ${
                   isScrolled ? "text-black" : "text-white"
                 }`}
                   >
@@ -73,7 +91,7 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-md font-medium transition-colors hover:text-accent ${
+                className={`text-lg font-medium transition-colors hover:text-accent ${
                   isScrolled ? "text-foreground/80" : "text-primary-foreground/90 hover:text-accent"
                 }`}
               >
@@ -86,7 +104,7 @@ export function Navbar() {
           <div className="hidden lg:flex items-center gap-4">
             <a
               href="tel:+19563318777"
-              className={`flex items-center gap-2 text-sm font-medium ${
+              className={`flex items-center gap-2 text-lg font-medium ${
                 isScrolled ? "text-primary" : "text-primary-foreground"
               }`}
             >
@@ -94,7 +112,7 @@ export function Navbar() {
               (956) 331-8777
             </a>
             <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
-              <Link href="/contact">Free Consultation</Link>
+              <Link href="/contact">Schedule Consultation</Link>
             </Button>
           </div>
 
@@ -110,45 +128,84 @@ export function Navbar() {
                 <span className="sr-only">Open menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-full sm:w-80">
-              <SheetTitle className="flex items-center gap-3">
-                <Image
-                  src="/images/Rivas-Law-Logo-White.webp"
-                  alt="Law Office Logo"
-                  width={150}
-                  height={40}
-                  className="h-10 w-auto"
-                />
-              </SheetTitle>
+            <SheetContent
+              side="right"
+              className="h-dvh w-full overflow-y-auto border-l border-accent/30 bg-[#ffffff] px-6 py-7 sm:w-[390px]"
+            >
+              <SheetTitle className="sr-only">Menu</SheetTitle>
               <SheetDescription className="sr-only">
-                Navigation menu
+                Mobile navigation menu
               </SheetDescription>
-              <nav className="flex flex-col gap-4">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setIsOpen(false)}
-                    className="text-lg font-medium text-foreground/80 transition-colors hover:text-primary py-2 border-b border-border"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-                <div className="mt-6 flex flex-col gap-4">
-                  <a
-                    href="tel:+19563318777"
-                    className="flex items-center gap-2 text-lg font-medium text-primary"
-                  >
-                    <Phone className="h-5 w-5" />
-                    (956) 331-8777
-                  </a>
-                  <Button asChild size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
-                    <Link href="/contact" onClick={() => setIsOpen(false)}>
-                      Free Consultation
-                    </Link>
-                  </Button>
+
+              <div className="mb-8 border-b border-accent/30 pb-6">
+                <div className="flex flex-col items-center text-center">
+                  <Image
+                    src="/images/Rivas-Law-Logo-Black.webp"
+                    alt="Rivas Law Firm Logo"
+                    width={95}
+                    height={95}
+                    className="mb-4 h-50 w-auto"
+                    priority
+                  />
+                    <h2 className="font-serif text-3xl font-semibold tracking-wide text-primary">
+                      Rivas Law Firm, PLLC.
+                    </h2>
+                  </div>
                 </div>
+
+              <nav className="flex flex-col">
+                {navLinks.map((link) => {
+                  const Icon = link.icon
+
+                  return (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setIsOpen(false)}
+                      className="group flex items-center justify-between border-b border-accent/25 py-5 text-primary transition-colors hover:text-accent"
+                    >
+                      <span className="flex items-center gap-4">
+                        <Icon className="h-5 w-5 text-accent" />
+                        <span className="font-serif text-2xl font-medium">
+                          {link.label}
+                        </span>
+                      </span>
+                    </Link>
+                  )
+                })}
               </nav>
+
+              <a
+                href="tel:+19563318777"
+                className="mt-8 block rounded-xl border border-accent/30 bg-white/70 p-5 shadow-sm transition-all hover:border-accent hover:shadow-md active:scale-[0.98]"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-accent/10 text-accent">
+                    <Phone className="h-6 w-6" />
+                  </div>
+
+                  <div className="flex-1">
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+                      Call Us
+                    </p>
+
+                    <p className="font-serif text-2xl font-semibold text-primary">
+                      (956) 331-8777
+                    </p>
+                  </div> 
+                  </div>
+              </a>
+
+              <Button
+                asChild
+                size="lg"
+                className="mt-5 h-16 w-full rounded-xl border border-accent bg-primary font-serif text-xl text-white shadow-md hover:bg-primary/90"
+              >
+                <Link href="/contact" onClick={() => setIsOpen(false)}>
+                  <Scale className="mr-2 h-5 w-5 text-accent" />
+                  Schedule Consultation
+                </Link>
+              </Button>
             </SheetContent>
           </Sheet>
         </div>
