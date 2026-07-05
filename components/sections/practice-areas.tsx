@@ -14,7 +14,7 @@ const practiceAreas = [
   {
     id: "personal-injury",
     icon: Car,
-    image: "/images/flipped-truck.webp",
+    image: "/images/Flipped-Truck.webp",
     title: "Personal Injury",
     description:
       "Aggressive representation for accident victims. We fight to get you the compensation you deserve for medical bills, lost wages, and pain and suffering.",
@@ -29,7 +29,7 @@ const practiceAreas = [
   {
     id: "family-law",
     icon: Users,
-    image: "/images/divorce.webp",
+    image: "/images/Divorce.webp",
     title: "Family Law",
     description:
       "Compassionate guidance through life's most challenging family matters. We protect your interests and your children's well-being.",

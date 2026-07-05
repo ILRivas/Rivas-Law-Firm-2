@@ -84,7 +84,7 @@ export function HeroSection() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/images/flipped-truck.webp"
+          src="/images/Flipped-Truck.webp"
           alt="Truck accident"
           fill
           className="object-cover"
