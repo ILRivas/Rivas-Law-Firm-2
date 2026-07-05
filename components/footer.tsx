@@ -40,7 +40,7 @@ export function Footer() {
 
             <div className="mt-4 flex gap-6">
               <a
-                href="https://www.facebook.com/rivaslawfirm/"
+                href="https://www.facebook.com/irivaslawfirm/"
                 className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-foreground/10 transition-colors hover:bg-accent hover:text-accent-foreground"
                 aria-label="Facebook"
               >
