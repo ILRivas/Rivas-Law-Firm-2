@@ -1,5 +1,6 @@
 import Link from "next/link"
-import { Phone, MapPin, Facebook, Linkedin, Twitter } from "lucide-react"
+import { Phone, MapPin, Facebook, Instagram } from "lucide-react"
+import { FaTiktok } from "react-icons/fa6"
 
 const practiceAreas = [
   { href: "/practice-areas#personal-injury", label: "Personal Injury" },
@@ -17,7 +18,7 @@ const quickLinks = [
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-background text-primary">
+    <footer className="relative overflow-hidden bg-background text-primary pb-5">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div
@@ -39,7 +40,7 @@ export function Footer() {
 
             <div className="mt-4 flex gap-6">
               <a
-                href="#"
+                href="https://www.facebook.com/rivaslawfirm/"
                 className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-foreground/10 transition-colors hover:bg-accent hover:text-accent-foreground"
                 aria-label="Facebook"
               >
@@ -47,19 +48,19 @@ export function Footer() {
               </a>
 
               <a
-                href="#"
+                href="https://www.instagram.com/rivaslawfirm/"
                 className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-foreground/10 transition-colors hover:bg-accent hover:text-accent-foreground"
-                aria-label="LinkedIn"
+                aria-label="Instagram"
               >
-                <Linkedin className="h-5 w-5" />
+                <Instagram className="h-5 w-5" />
               </a>
 
               <a
-                href="#"
+                href="https://www.tiktok.com/@rivaslawfirm"
                 className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-foreground/10 transition-colors hover:bg-accent hover:text-accent-foreground"
-                aria-label="Twitter"
+                aria-label="Tiktok"
               >
-                <Twitter className="h-5 w-5" />
+                <FaTiktok className="h-5 w-5" />
               </a>
             </div>
           </div>
@@ -67,7 +68,7 @@ export function Footer() {
           
 
           <div>
-            <h3 className="mb-6 text-lg font-semibold">Quick Links</h3>
+            <h3 className="mb-6 text-lg font-serif">Quick Links</h3>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.href}>
@@ -83,7 +84,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-6 text-lg font-semibold">Contact Us</h3>
+            <h3 className="mb-6 text-lg font-serif">Contact Us</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="mt-1 h-5 w-5 shrink-0 text-accent" />
@@ -117,24 +118,39 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="py-6 sm:py-8">
-          <div className="flex flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left">
-            <p className="text-sm text-primary">
-              © {new Date().getFullYear()} Rivas Law Firm, PLLC. All rights
-              reserved.
+              {/* Bottom Bar */}
+        <div className="mt-10 border-t border-primary-foreground/15 pt-6">
+          <div className="grid gap-4 text-center md:grid-cols-3 md:items-center">
+            {/* Left */}
+            <p className="text-sm text-primary font-serif md:text-left">
+              © {new Date().getFullYear()} Rivas Law Firm, PLLC. All rights reserved.
             </p>
 
-            <div className="flex gap-6">
+            {/* Center */}
+            <p className="text-sm font-serif text-primary">
+              Website developed by{" "}
+              <a
+                href="https://www.bordertowndigital.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-accent transition-colors hover:text-accent/80"
+              >
+                Bordertown Digital
+              </a>
+            </p>
+
+            {/* Right */}
+            <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 md:justify-end">
               <Link
-                href="#"
-                className="text-sm text-primary transition-colors hover:text-accent"
+                href="/privacy-policy"
+                className="text-sm text-primary font-serif transition-colors hover:text-accent"
               >
                 Privacy Policy
               </Link>
 
               <Link
-                href="#"
-                className="text-sm text-primary transition-colors hover:text-accent"
+                href="/terms-of-service"
+                className="text-sm text-primary font-serif transition-colors hover:text-accent"
               >
                 Terms of Service
               </Link>
@@ -143,5 +159,6 @@ export function Footer() {
         </div>
       </div>
     </footer>
+    
   )
 }

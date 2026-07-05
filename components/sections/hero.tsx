@@ -117,8 +117,7 @@ export function HeroSection() {
 
               <p className="mt-6 text-lg leading-relaxed text-primary-foreground/80 sm:text-xl">
                 <span className="text-pretty">
-                  With decades of experience serving the Rio Grande Valley, our
-                  dedicated legal team is committed to providing exceptional
+                  Our dedicated legal team is committed to providing exceptional
                   representation in personal injury, family law, criminal
                   defense, and property matters.
                 </span>
@@ -151,7 +150,7 @@ export function HeroSection() {
                   Why Choose Us
                 </h3>
 
-                <div className="space-y-6">
+                <div className="space-y-6 font-serif">
                   {stats.map((stat) => (
                     <CountUpStat
                       key={stat.label}

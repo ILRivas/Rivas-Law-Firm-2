@@ -88,7 +88,7 @@ export function PracticeAreasSection({
             <p className="mt-4 text-lg text-muted-foreground">
               <span className="text-pretty">
                 Comprehensive legal services tailored to meet your specific
-                needs. Our experienced attorneys are ready to help you navigate
+                needs. Our experienced legal team is ready to help you navigate
                 complex legal challenges.
               </span>
             </p>

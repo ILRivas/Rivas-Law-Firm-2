@@ -120,7 +120,26 @@
   * {
     @apply border-border outline-ring/50;
   }
+
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
   body {
     @apply bg-background text-foreground;
+  }
+
+  @media (max-width: 768px) {
+    html,
+    body {
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    html::-webkit-scrollbar,
+    body::-webkit-scrollbar {
+      display: none;
+    }
   }
 }

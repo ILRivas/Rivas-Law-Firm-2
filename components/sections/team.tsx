@@ -33,7 +33,7 @@ const staff = [
     role: "Office Manager",
     initials: "ZR",
     image: "/images/Zack-Headshot.webp",
-    bio: "Zachary R. is a dedicated paralegal and pre-law student at UTRGV, whose commitment to client care is evident in every case he manages. He ensures that every client receives exceptional care and attention throughout their legal journey, addressing all concerns promptly and providing clear guidance.",
+    bio: "Zachary R. is a dedicated Office Manager with extensive experience in client advocacy and case management, working alongside Attorney Rivas to help secure favorable outcomes for clients. He is currently pursuing a Pre-Law degree at The University of Texas Rio Grande Valley and plans to attend law school to further his impact in the legal field.",
     languages: ["English", "Spanish"],
   },
   {
@@ -41,7 +41,7 @@ const staff = [
     role: "Paralegal",
     initials: "ST",
     image: "/images/Sam-Headshot.webp",
-    bio: "Samantha T. is an accomplished paralegal who coordinates and manages client cases. She is known for her exceptional organizational skills and her ability to streamline case progress, ensuring that every client receives the personalized support they deserve. ",
+    bio: "Samantha T. is a dedicated Paralegal with a background in Business Administration, Accounting, and Criminal Justice. She is passionate about advocating for clients and helping them obtain the compensation and support they deserve.",
     languages: ["English"],
   },
   {
@@ -49,7 +49,7 @@ const staff = [
     role: "Paralegal",
     initials: "NG",
     image: "/images/Nelda-Headshot.webp",
-    bio: "Nelda G. is a skilled paralegal who provides essential support to the legal team. She is known for her meticulous attention to detail and her ability to assist in preparing legal documents, conducting research, and ensuring that all case files are organized and up-to-date.",
+    bio: "Nelda G. brings years of experience in the real estate industry and works alongside Attorney Rivas to assist clients with property transactions, closings, deeds, and related matters. Her professionalism and dedication help ensure each transaction is handled smoothly and efficiently.",
     languages: ["English", "Spanish"],
   },
   {
@@ -57,7 +57,7 @@ const staff = [
     role: "Paralegal",
     initials: "BA",
     image: "/images/Blanca-Headshot.webp",
-    bio: "Blanca A. is a dedicated paralegal who plays a crucial role in supporting the legal team. She is recognized for her strong research skills and her ability to assist in case preparation, ensuring that all necessary documentation is accurate and complete.",
+    bio: "Blanca A. brings years of experience in the real estate industry and works closely with Attorney Rivas to assist clients with property transactions, closings, deeds, and other real estate matters. Her attention to detail and commitment to client service help ensure a smooth and efficient process.",
     languages: ["English", "Spanish"],
   },
   {
@@ -65,7 +65,7 @@ const staff = [
     role: "Intake Specialist",
     initials: "JP",
     image: "/images/Jennifer-Headshot.webp",
-    bio: "Jennifer P. is a dedicated intake specialist who ensures that every client is properly assessed and directed to the appropriate legal resources. Her compassionate approach and attention to detail make her an invaluable asset to the team.",
+    bio: "Jennifer P. is an Intake Specialist with a Bachelor's degree in Criminal Justice. She helps guide clients through the intake process, answers questions, and ensures they receive the support they need from the very beginning of their case.",
     languages: ["English", "Spanish"],
   },
 ]

@@ -86,7 +86,7 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className=" font-sans hidden lg:flex items-center gap-8">
+          <nav className=" font-serif hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -104,14 +104,14 @@ export function Navbar() {
           <div className="hidden lg:flex items-center gap-4">
             <a
               href="tel:+19563318777"
-              className={`flex items-center gap-2 text-lg font-medium ${
+              className={`flex items-center gap-2 text-lg font-serif font-medium ${
                 isScrolled ? "text-primary" : "text-primary-foreground"
               }`}
             >
               <Phone className="h-4 w-4" />
               (956) 331-8777
             </a>
-            <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
+            <Button asChild className="bg-accent text-accent-foreground font-serif hover:bg-accent/90">
               <Link href="/contact">Schedule Consultation</Link>
             </Button>
           </div>
@@ -185,7 +185,7 @@ export function Navbar() {
                   </div>
 
                   <div className="flex-1">
-                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+                    <p className="text-xs font-serif uppercase tracking-[0.2em] text-accent">
                       Call Us
                     </p>
 
