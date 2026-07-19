@@ -23,7 +23,6 @@ const practiceAreas = [
       "Truck Accidents",
       "Slip and Fall",
       "Workplace Injuries",
-      "Medical Malpractice",
     ],
   },
   {
@@ -56,7 +55,7 @@ const practiceAreas = [
     image: "/images/home-keys.webp",
     title: "Property Law",
     description:
-      "Expert legal counsel for all real estate and property matters. We ensure your property transactions and disputes are handled with precision.",
+      "Practical legal counsel for real estate and property matters. We help ensure your property transactions and disputes are handled with precision.",
     services: [
       "Real Estate Transactions",
       "Property Disputes",
@@ -101,7 +100,7 @@ export function PracticeAreasSection({
             <Card
               key={area.id}
               id={area.id}
-              className="group relative overflow-hidden border-border/50 transition-all duration-300 hover:border-primary hover:shadow-lg"
+              className="group relative scroll-mt-28 overflow-hidden border-border/50 transition-all duration-300 hover:border-primary hover:shadow-lg"
             >
               {/* Background Image */}
               <div className="absolute inset-0">
@@ -148,7 +147,7 @@ export function PracticeAreasSection({
                     className="gap-2 group-hover:bg-primary group-hover:text-primary-foreground"
                     asChild
                   >
-                    <Link href="/contact">
+                    <Link href={`/contact?practiceArea=${area.id}`}>
                       Learn More
                       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </Link>

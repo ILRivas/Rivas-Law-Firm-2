@@ -15,14 +15,76 @@ const inter = Inter({
   display: 'swap',
 });
 
+const siteTitle = 'Rivas Law Firm, PLLC. | Representing the Rio Grande Valley'
+const siteDescription = 'Experienced attorney representing the Rio Grande Valley, providing legal services in personal injury, family law, property law, and criminal defense.'
+
 export const metadata: Metadata = {
-  title: 'Rivas Law Firm, PLLC. | Representing the Rio Grande Valley',
-  description: 'Experienced attorney representing the Rio Grande Valley, providing legal services in personal injury, family law, property law, and criminal defense.',
-  keywords: ['attorney', 'lawyer', 'Rio Grande Valley', 'McAllen', 'Pharr', 'San Juan', 'personal injury', 'family law', 'criminal defense', 'property law'],
+  metadataBase: new URL('https://www.rivaslawrgv.com'),
+  title: siteTitle,
+  description: siteDescription,
   icons: {
-  icon: "/favicon.ico",
-  apple: "/apple-icon.png",
-},
+    icon: "/favicon.ico",
+    apple: "/apple-icon.png",
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    siteName: 'Rivas Law Firm, PLLC.',
+    url: 'https://www.rivaslawrgv.com',
+    title: siteTitle,
+    description: siteDescription,
+    images: [{ url: '/images/LawFirm.webp', alt: 'Rivas Law Firm, PLLC.' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: siteTitle,
+    description: siteDescription,
+    images: ['/images/LawFirm.webp'],
+  },
+}
+
+const legalServiceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'LegalService',
+  '@id': 'https://www.rivaslawrgv.com/#firm',
+  name: 'Rivas Law Firm, PLLC.',
+  url: 'https://www.rivaslawrgv.com/',
+  telephone: '+1-956-331-8777',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '125 E. Caffery Ave',
+    addressLocality: 'Pharr',
+    addressRegion: 'TX',
+    postalCode: '78577',
+    addressCountry: 'US',
+  },
+  areaServed: [
+    'Pharr, TX',
+    'McAllen, TX',
+    'San Juan, TX',
+    'Weslaco, TX',
+    'Mission, TX',
+    'Rio Grande City, TX',
+    'Donna, TX',
+    'Alamo, TX',
+    'Hidalgo County, TX',
+    'Rio Grande Valley, TX',
+  ],
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '08:00',
+    closes: '17:00',
+  },
+  founder: {
+    '@type': 'Person',
+    name: 'Israel Lee Rivas',
+  },
+  sameAs: [
+    'https://www.facebook.com/irivaslawfirm/',
+    'https://www.instagram.com/rivaslawfirm/',
+    'https://www.tiktok.com/@rivaslawfirm',
+  ],
 }
 
 export const viewport: Viewport = {
@@ -39,6 +101,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable} bg-background`}>
       <body className="font-sans antialiased">
+        <script
+          type="application/ld+json"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(legalServiceSchema) }}
+        />
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>

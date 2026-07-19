@@ -85,7 +85,7 @@ export function HeroSection() {
       <div className="absolute inset-0">
         <Image
           src="/images/Flipped-Truck.webp"
-          alt="Truck accident"
+          alt=""
           fill
           className="object-cover"
           priority
@@ -102,24 +102,20 @@ export function HeroSection() {
             {/* Content */}
             <div className="text-center lg:text-left">
               <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-accent">
-                Trusted Legal Representation in the Rio Grande Valley
+                Rivas Law Firm, PLLC. — Pharr, Texas
               </p>
 
               <h1 className="font-serif text-4xl font-bold leading-tight text-primary-foreground sm:text-5xl lg:text-6xl">
                 <span className="text-balance">
-                  Rivas Law Firm, PLLC.
-                  <br />
-                  <span className="text-accent">
-                    Wrangling Every Legal Challenge You Face
-                  </span>
+                  Personal Injury Representation for the{" "}
+                  <span className="text-accent">Rio Grande Valley</span>
                 </span>
               </h1>
 
               <p className="mt-6 text-lg leading-relaxed text-primary-foreground/80 sm:text-xl">
                 <span className="text-pretty">
-                  Our dedicated legal team is committed to providing exceptional
-                  representation in personal injury, family law, criminal
-                  defense, and property matters.
+                  We represent clients in family law, criminal defense, and
+                  property matters throughout Hidalgo County and South Texas.
                 </span>
               </p>
 

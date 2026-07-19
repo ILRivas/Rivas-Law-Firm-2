@@ -20,7 +20,7 @@ export function AboutPreview() {
             <div className="aspect-6/9 overflow-hidden rounded-2xl bg-primary/10">
               <Image
                 src="/images/Attorney-Headshot.webp"
-                alt="Professional law office"
+                alt="Attorney Israel Rivas"
                 fill
                 className="object-cover object-center rounded-3xl"
                 priority

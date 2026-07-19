@@ -1,10 +1,20 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 
+const title = "Terms of Service | Rivas Law Firm, PLLC"
+const description =
+  "Read the terms of service for using the Rivas Law Firm, PLLC website."
+
 export const metadata: Metadata = {
-  title: "Terms of Service | Rivas Law Firm, PLLC",
-  description:
-    "Read the terms of service for using the Rivas Law Firm, PLLC website.",
+  title,
+  description,
+  alternates: { canonical: "/terms-of-service" },
+  openGraph: {
+    type: "website",
+    url: "https://www.rivaslawrgv.com/terms-of-service",
+    title,
+    description,
+  },
 }
 
 export default function TermsOfServicePage() {

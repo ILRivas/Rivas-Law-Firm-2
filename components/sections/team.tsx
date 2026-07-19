@@ -11,17 +11,15 @@ const attorney = {
   title: "Founding Attorney",
   initials: "IR",
   image: "/images/Rivas-Headshot2.webp",
-  bio: `Israel lee Rivas is a dedicated attorney and the visionary founder of the Rivas Law firm, PLLC. With a relentless commitment to justice and an impressive track record of securing millions in settlements for his clients, he combines legal expertise with a compassionate approach to advocacy.
-  
-  His leadership and unwaivering determination have established the firm as a trusted partner for individuals seeking fair compensation and effective legal representation.`,
+  bio: `Israel Lee Rivas is a dedicated attorney and the founder of Rivas Law Firm, PLLC. With a relentless commitment to justice and an impressive track record of securing millions in settlements for his clients, he combines legal expertise with a compassionate approach to advocacy.
+
+His leadership and unwavering determination have established the firm as a trusted partner for individuals seeking fair compensation and effective legal representation.`,
   education: [
     { degree: "Juris Doctor", school: "Ohio Northern University"},
     { degree: "B.A. Political Science", school: "UT Pan American" },
   ],
   barAdmissions: [
     "State Bar of Texas",
-    "U.S. District Court, Southern District of Texas",
-    "U.S. Court of Appeals, Fifth Circuit",
   ],
   languages: ["English", "Spanish"],
 }

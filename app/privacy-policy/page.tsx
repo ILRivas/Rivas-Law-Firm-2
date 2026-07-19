@@ -1,10 +1,20 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 
+const title = "Privacy Policy | Rivas Law Firm, PLLC"
+const description =
+  "Read the privacy policy for Rivas Law Firm, PLLC. Learn how information submitted through our website may be collected, used, and protected."
+
 export const metadata: Metadata = {
-  title: "Privacy Policy | Rivas Law Firm, PLLC",
-  description:
-    "Read the privacy policy for Rivas Law Firm, PLLC. Learn how information submitted through our website may be collected, used, and protected.",
+  title,
+  description,
+  alternates: { canonical: "/privacy-policy" },
+  openGraph: {
+    type: "website",
+    url: "https://www.rivaslawrgv.com/privacy-policy",
+    title,
+    description,
+  },
 }
 
 export default function PrivacyPolicyPage() {

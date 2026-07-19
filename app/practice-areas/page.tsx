@@ -5,9 +5,26 @@ import { CTASection } from "@/components/cta-section"
 import { PracticeAreasSection } from "@/components/sections/practice-areas"
 import { PageHeader } from "@/components/page-header"
 
+const title = "Practice Areas | Rivas Law Firm, PLLC. — Pharr, TX"
+const description = "Personal injury, family law, criminal defense, and property law representation from Rivas Law Firm, PLLC., serving Pharr, Texas and the Rio Grande Valley."
+
 export const metadata: Metadata = {
-  title: "Practice Areas | Law Office - Pharr, Texas",
-  description: "Comprehensive legal services in personal injury, family law, criminal defense, and property law. Serving Pharr, Texas and the Rio Grande Valley.",
+  title,
+  description,
+  alternates: { canonical: "/practice-areas" },
+  openGraph: {
+    type: "website",
+    url: "https://www.rivaslawrgv.com/practice-areas",
+    title,
+    description,
+    images: [{ url: "/images/LawFirm.webp", alt: "Rivas Law Firm, PLLC." }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/images/LawFirm.webp"],
+  },
 }
 
 export default function PracticeAreasPage() {

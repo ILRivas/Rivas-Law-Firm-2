@@ -1,6 +1,7 @@
 "use client"
 
-import { useState, type FormEvent } from "react"
+import { useState, useEffect, type FormEvent } from "react"
+import { useSearchParams } from "next/navigation"
 import Script from "next/script"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -25,12 +26,22 @@ declare global {
   }
 }
 
-const contactInfo = [
+type ContactInfoItem = {
+  icon: typeof Phone
+  title: string
+  content?: string
+  href?: string | null
+  numbers?: { label: string; href: string }[]
+}
+
+const contactInfo: ContactInfoItem[] = [
   {
     icon: Phone,
     title: "Phone",
-    content: "(956) 331-8777",
-    href: "tel:+19563318777",
+    numbers: [
+      { label: "(956) 331-8777", href: "tel:+19563318777" },
+      { label: "(956) 787-6261", href: "tel:+19567876261" },
+    ],
   },
   {
     icon: MapPin,
@@ -65,11 +76,19 @@ interface ContactSectionProps {
 }
 
 export function ContactSection({ showHeader = true }: ContactSectionProps) {
+  const searchParams = useSearchParams()
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState("")
   const [practiceArea, setPracticeArea] = useState("")
   const [preferredContact, setPreferredContact] = useState("")
+
+  useEffect(() => {
+    const requested = searchParams.get("practiceArea")
+    if (requested && practiceAreas.some((area) => area.value === requested)) {
+      setPracticeArea(requested)
+    }
+  }, [searchParams])
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -169,8 +188,8 @@ export function ContactSection({ showHeader = true }: ContactSectionProps) {
             <p className="mt-4 text-lg text-muted-foreground">
               <span className="text-pretty">
                 Take the first step towards resolving your legal matter. Contact
-                us today to schedule a confidential consultation with our
-                experienced legal team.
+                us today to schedule a consultation with our experienced legal
+                team.
               </span>
             </p>
           </div>
@@ -191,7 +210,19 @@ export function ContactSection({ showHeader = true }: ContactSectionProps) {
                       {item.title}
                     </h3>
 
-                    {item.href ? (
+                    {item.numbers ? (
+                      <div className="flex flex-col">
+                        {item.numbers.map((number) => (
+                          <a
+                            key={number.href}
+                            href={number.href}
+                            className="break-words text-muted-foreground transition-colors hover:text-primary"
+                          >
+                            {number.label}
+                          </a>
+                        ))}
+                      </div>
+                    ) : item.href ? (
                       <a
                         href={item.href}
                         className="break-words text-muted-foreground transition-colors hover:text-primary"
@@ -248,6 +279,11 @@ export function ContactSection({ showHeader = true }: ContactSectionProps) {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  <p className="text-sm text-muted-foreground">
+                    We personally review every message and follow up as soon
+                    as we can.
+                  </p>
+
                   <div className="grid gap-6 sm:grid-cols-2">
                     <div className="space-y-2">
                       <Label htmlFor="firstName">First Name *</Label>

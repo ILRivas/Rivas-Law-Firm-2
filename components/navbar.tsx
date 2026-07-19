@@ -67,7 +67,7 @@ export function Navbar() {
                   ? "/images/Rivas-Law-Logo-Black.webp"
                   : "/images/Rivas-Law-Logo-White.webp"
               }
-              alt="Law Office Logo"
+              alt="Rivas Law Firm, PLLC. logo"
               width={180}
               height={50}
               className="pt-4 h-25 w-auto"
@@ -141,7 +141,7 @@ export function Navbar() {
                 <div className="flex flex-col items-center text-center">
                   <Image
                     src="/images/Rivas-Law-Logo-Black.webp"
-                    alt="Rivas Law Firm Logo"
+                    alt="Rivas Law Firm, PLLC. logo"
                     width={95}
                     height={95}
                     className="mb-4 h-50 w-auto"
